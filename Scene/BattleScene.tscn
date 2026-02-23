@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc8jt6h6trfrv"]
+[gd_scene format=3 uid="uid://dc8jt6h6trfrv"]
 
-[ext_resource type="Texture2D" uid="uid://d3q3x1jo5l0h" path="res://Assets/candleA_01.png" id="1_b278l"]
-[ext_resource type="Script" uid="uid://dosox6vw3c3mc" path="res://camera_3d.gd" id="2_hvnqj"]
-[ext_resource type="Script" uid="uid://dlsb5dro0egr0" path="res://candle_1.gd" id="3_teshm"]
-[ext_resource type="Script" uid="uid://cv6nnxlprfyek" path="res://candle_2.gd" id="4_7pwqm"]
-[ext_resource type="Script" uid="uid://bywhal6wajmmt" path="res://candle_3.gd" id="5_bqhns"]
-[ext_resource type="Texture2D" uid="uid://dptjvyqy68gar" path="res://Assets/torch_1.png" id="6_7pwqm"]
+[ext_resource type="Texture2D" uid="uid://d3q3x1jo5l0h" path="res://Assets/Dungeon/candleA_01.png" id="1_b278l"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="2_hvnqj"]
+[ext_resource type="Script" path="res://candle_1.gd" id="3_teshm"]
+[ext_resource type="Script" path="res://candle_2.gd" id="4_7pwqm"]
+[ext_resource type="Script" path="res://candle_3.gd" id="5_bqhns"]
+[ext_resource type="Texture2D" uid="uid://dptjvyqy68gar" path="res://Assets/Dungeon/torch_1.png" id="6_7pwqm"]
 
 [node name="Node3D" type="Node3D"]
 
