@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dsep1vkifdbaq"]
 
+[ext_resource type="Script" uid="uid://dyo4q0d6fpoil" path="res://Scripts/canvas.gd" id="1_bv3qm"]
 [ext_resource type="Texture2D" uid="uid://bctd1rdsk00vs" path="res://Assets/Castle/Castle Tile Set Sheet.png" id="1_x1g8s"]
 [ext_resource type="Texture2D" uid="uid://bx48b61nm4tqm" path="res://Assets/Dungeon/mainlevbuild.png" id="2_mx6q7"]
 [ext_resource type="Script" uid="uid://b2xugokrpewg2" path="res://Scripts/char_mover.gd" id="3_dalqs"]
@@ -10660,6 +10661,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1216193010]
+script = ExtResource("1_bv3qm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=949735878]
 position = Vector2(66, 118)
@@ -10688,3 +10690,13 @@ animation = &"Idle_Down"
 position = Vector2(30, 54)
 zoom = Vector2(5, 5)
 script = ExtResource("6_csu60")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=869576178]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1035114063]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
