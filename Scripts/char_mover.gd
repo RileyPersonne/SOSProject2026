@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var _animation_player = self.get_node("AnimatedSprite2D")
 
-const SPEED = 2
+const SPEED = 200
 var dir = "down"
 var idle = false
 
@@ -17,41 +17,44 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	#get input
-	var h_direction = Input.get_axis("left", "right")
-	var v_direction = Input.get_axis("up", "down")
+	var direction = Input.get_vector("left", "right", "up", "down")
+	
+	velocity = direction * SPEED
+	move_and_slide()
 	
 	#move horizontal
-	if h_direction:
-		idle = false
-		position.x += h_direction * SPEED
+	if direction.x:
+		
 		#walk right
-		if not v_direction:
-			if h_direction > 0 and dir != "right":
+		if not direction.y:
+			if direction.x > 0 and (dir != "right" or idle==true):
 				_animation_player.stop()
 				_animation_player.play("Walk_Right")
 				dir = "right"
+				idle = false
 			#walk left
-			elif h_direction < 0 and dir != "left": 
+			elif direction.x < 0 and (dir != "left" or idle==true): 
 				_animation_player.stop()
 				_animation_player.play("Walk_Left")
 				dir = "left"
+				idle = false
 	
 	#move vertical
-	if v_direction:
-		idle = false
-		position.y += v_direction * SPEED
+	if direction.y:
 		#walk down
-		if v_direction > 0 and dir != "down":
+		if direction.y > 0 and (dir != "down" or idle==true):
 			_animation_player.stop()
 			_animation_player.play("Walk_Down")
 			dir = "down"
+			idle = false
 		#walk up
-		elif v_direction < 0 and dir != "up": 
+		elif direction.y < 0 and (dir != "up" or idle==true): 
 			_animation_player.stop()
 			_animation_player.play("Walk_Up")
 			dir = "up"
+			idle = false
 			
-	if not v_direction and not h_direction:
+	if not direction.y and not direction.x:
 		if not idle:
 			idle = true
 			_animation_player.stop()
