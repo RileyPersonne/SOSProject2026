@@ -10,6 +10,8 @@ var pos = Vector2i(0,0)
 @export var default : Texture2D
 @export var available : Texture2D
 @export var danger : Texture2D
+
+var has_entity := false
 var t_name : String
 
 # Called when the node enters the scene tree for the first time.

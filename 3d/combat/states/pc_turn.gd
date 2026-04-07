@@ -12,11 +12,11 @@ var turn : int
 func handle_input(_event: InputEvent) -> void:
 	if _event.is_action_pressed("click"):
 		if map.get_current_tile().t_name == "available":
-			character.pos = map.current_coords
+			character.data.pos = map.current_coords
 			character.position.x = (map.get_current_tile().position.x - 1.25)
 			character.position.z = (map.get_current_tile().position.z - .5)
 		map.reset_tiles()
-		map.draw_zone(character.pos, character.data.movement_range)
+		map.draw_zone(character.data.pos, character.data.movement_range)
 		get_tree().current_scene.next_turn()
 
 
@@ -29,8 +29,9 @@ func physics_update(_delta: float) -> void:
 
 
 func enter(prev) -> void:
+	print(character.data.name)
 	map.reset_tiles()
-	map.draw_zone(character.pos, character.data.movement_range)
+	map.draw_zone(character.data.pos, character.data.movement_range)
 
 
 func exit() -> void:

@@ -32,14 +32,14 @@ func _ready() -> void:
 		character_turn.character = player
 		character_turn.turn = i
 		turn_order.append(character_turn)
-		
 		i += 1
 	state_machine.transition(turn_order[0].name)
 
 
 func next_turn() -> void:
+	print(turn)
 	turn = (turn+1)%len(turn_order)
-	state_machine.transition(turn_order[turn-1].name)
+	state_machine.transition(turn_order[turn].name)
 
 func _process(delta: float) -> void:
 	pass
