@@ -10,7 +10,7 @@ var pos = Vector2i(0,0)
 @export var default : Texture2D
 @export var available : Texture2D
 @export var danger : Texture2D
-
+var t_name : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +18,14 @@ func _ready() -> void:
 
 
 func change_texture(texture_name) -> void:
-	mesh.material.albedo_texture = available
+	t_name = texture_name
+	match texture_name:
+		"default":
+			mesh.material.albedo_texture = default
+		"available":
+			mesh.material.albedo_texture = available
+		"danger":
+			mesh.material.albedo_texture = danger
 	
 	
 func get_width() -> float:
@@ -26,5 +33,4 @@ func get_width() -> float:
 
 
 func _on_area_3d_mouse_entered() -> void:
-	print("mouse entered: ", pos.x, pos.y)
 	entered.emit(pos)

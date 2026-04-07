@@ -9,22 +9,21 @@ extends Node
 ).call()
 
 func _ready() -> void:
+	await owner.ready
 	for state_node: State in find_children("*", "State"):
 		state_node.finished.connect(transition)
-		
-	await owner.ready
 	state.enter("")
 	
 	
 func transition(target) -> void:
-	if not has_node(target):
+	if not has_node(str(target)):
 		printerr(owner.name + " failed to transition to: ", target, " but it doesnt exist")
 		return
 	
 	var prev = state.name
 	state.exit()
-	state = get_node(target)
-	state.enter(prev)
+	state = get_node(str(target))
+	state.enter(str(prev))
 	
 func _unhandled_input(event: InputEvent) -> void:
 	state.handle_input(event)

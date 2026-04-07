@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dsgp08lqmo3ij"]
+
+[ext_resource type="Texture2D" uid="uid://d3q3x1jo5l0h" path="res://Assets/Dungeon/candleA_01.png" id="1_23nqf"]
+[ext_resource type="Script" uid="uid://dvrcj0w45laen" path="res://3d/character3d.gd" id="2_mw8bm"]
+
+[node name="Candle 1" type="Sprite3D" unique_id=1444945561]
+texture_filter = 0
+texture = ExtResource("1_23nqf")
+script = ExtResource("2_mw8bm")

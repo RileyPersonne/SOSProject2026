@@ -1,7 +1,7 @@
 class_name Actor3D
 extends Sprite3D
 
-var pos = Vector2i(0,0)
+@export var pos = Vector2i(3,3)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
