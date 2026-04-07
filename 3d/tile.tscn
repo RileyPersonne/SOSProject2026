@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cecwkn0diag3f"]
+
+[ext_resource type="Texture2D" uid="uid://dephvci2lmt3v" path="res://Assets/tile.png" id="1_jojhq"]
+[ext_resource type="Script" uid="uid://knciusyofmkl" path="res://tile.gd" id="2_gnjaq"]
+[ext_resource type="Texture2D" uid="uid://rfxynmcjrp3x" path="res://Assets/available_tile.png" id="3_y7grv"]
+[ext_resource type="Texture2D" uid="uid://bc03hjpr2jfvy" path="res://Assets/danger_tile.png" id="4_2oy30"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwwl7"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("1_jojhq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xj46k"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_fwwl7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_donlu"]
+size = Vector3(2, 0.1, 2)
+
+[node name="Tile" type="MeshInstance3D" unique_id=1770448442]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("PlaneMesh_xj46k")
+skeleton = NodePath("../..")
+script = ExtResource("2_gnjaq")
+default = ExtResource("1_jojhq")
+available = ExtResource("3_y7grv")
+danger = ExtResource("4_2oy30")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1031392052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=242539129]
+transform = Transform3D(1, 0, 0, 0, -1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0)
+shape = SubResource("BoxShape3D_donlu")
+
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]

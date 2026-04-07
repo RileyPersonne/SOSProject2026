@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bctd1rdsk00vs"
-path.s3tc="res://.godot/imported/Castle Tile Set Sheet.png-4ca904b1f2bfcf44d504d543725c5872.s3tc.ctex"
+uid="uid://bc03hjpr2jfvy"
+path="res://.godot/imported/danger_tile.png-8392ab65e58a6324d033aee6d622667b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Castle/Castle Tile Set Sheet.png"
-dest_files=["res://.godot/imported/Castle Tile Set Sheet.png-4ca904b1f2bfcf44d504d543725c5872.s3tc.ctex"]
+source_file="res://Assets/danger_tile.png"
+dest_files=["res://.godot/imported/danger_tile.png-8392ab65e58a6324d033aee6d622667b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

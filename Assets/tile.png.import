@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bctd1rdsk00vs"
-path.s3tc="res://.godot/imported/Castle Tile Set Sheet.png-4ca904b1f2bfcf44d504d543725c5872.s3tc.ctex"
+uid="uid://dephvci2lmt3v"
+path.s3tc="res://.godot/imported/tile.png-9493555de8edb914756543e894238c3e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Castle/Castle Tile Set Sheet.png"
-dest_files=["res://.godot/imported/Castle Tile Set Sheet.png-4ca904b1f2bfcf44d504d543725c5872.s3tc.ctex"]
+source_file="res://Assets/tile.png"
+dest_files=["res://.godot/imported/tile.png-9493555de8edb914756543e894238c3e.s3tc.ctex"]
 
 [params]
 
