@@ -20,8 +20,8 @@ metadata/_custom_type_script = "uid://ps1kkjlt7l4g"
 script = ExtResource("2_donlu")
 name = "Bob"
 pos = Vector2i(4, 3)
-movement_range = 3
-attack_range = 2
+movement_range = 2
+attack_range = 1
 metadata/_custom_type_script = "uid://ps1kkjlt7l4g"
 
 [node name="Node3D" type="Node3D" unique_id=1152629599]

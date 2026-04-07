@@ -27,17 +27,17 @@ func _ready() -> void:
 
 func draw_zone(origin, range) -> void:
 	for i in range((range * 2) + 1):
-		if origin.x - range + i < len(map) and origin.x - range + i >= 0 : 
+		if origin.x - range + i < len(map) and origin.x - range + i >= 0 and not map[origin.x - range + i][origin.y].has_entity:
 			map[origin.x - range + i][origin.y].change_texture("available")
-		if origin.y - range + i >= 0 and origin.y - range + i < len(map[0]): 
+		if origin.y - range + i >= 0 and origin.y - range + i < len(map[0]) and not map[origin.x][origin.y - range + i].has_entity: 
 			map[origin.x][origin.y - range + i].change_texture("available")
 	for i in range(range + 1):
 		var remainder = (range + 1) + (i-(range + 1))
 		if remainder > 0:
 			for j in (remainder*2)+1:
-				if origin.y - remainder + j >= 0 and origin.y - remainder + j < len(map[0])  and origin.x - range + i >= 0 and origin.x - range + i < len(map):
+				if origin.y - remainder + j >= 0 and origin.y - remainder + j < len(map[0])  and origin.x - range + i >= 0 and origin.x - range + i < len(map) and not map[origin.x - range + i][origin.y - remainder + j].has_entity:
 					map[origin.x - range + i][origin.y - remainder + j].change_texture("available")
-				if origin.y - remainder + j >= 0 and origin.y - remainder + j < len(map[0])  and origin.x + range - i >= 0 and origin.x + range - i < len(map):
+				if origin.y - remainder + j >= 0 and origin.y - remainder + j < len(map[0])  and origin.x + range - i >= 0 and origin.x + range - i < len(map) and not map[origin.x + range - i][origin.y - remainder + j].has_entity:
 					map[origin.x + range - i][origin.y - remainder + j].change_texture("available")
 
 

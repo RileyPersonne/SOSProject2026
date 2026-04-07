@@ -12,12 +12,11 @@ extends Node3D
 const PLAYER = preload("uid://dsgp08lqmo3ij")
 const PcTurn = preload("uid://uyn8raxrg5vh")
 
-# TODO assign each character a turn in order iterate through each characters actions based on the turn order
+
 var turn : int = 0
 var turn_order : Array[State]
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var i = 0
 	for character in players:
@@ -27,6 +26,7 @@ func _ready() -> void:
 		player.position.y = .1
 		player.position.z = (map.map[character.pos.x][character.pos.y].position.z - .5)
 		player.data = character
+		map.map[character.pos.x][character.pos.y].has_entity = true
 		var character_turn = PcTurn.new()
 		state_machine.add_child(character_turn)
 		character_turn.character = player
@@ -37,7 +37,6 @@ func _ready() -> void:
 
 
 func next_turn() -> void:
-	print(turn)
 	turn = (turn+1)%len(turn_order)
 	state_machine.transition(turn_order[turn].name)
 
