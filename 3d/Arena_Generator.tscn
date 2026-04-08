@@ -1,0 +1,70 @@
+[gd_scene format=4 uid="uid://dxjlm1qvuseoo"]
+
+[ext_resource type="Script" uid="uid://1vc1rprc6ece" path="res://3d/arena_generator.gd" id="1_5sj44"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_shgo6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(0, 0, 0, 1e-05, 1, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(0, 0, 0, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(0, 0, 0, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(0, 0, 0, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(0, 0, 0, 1, 1, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAAAA/3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}]
+
+[node name="ArenaGenerator" type="MeshInstance3D" unique_id=562925849]
+mesh = SubResource("ArrayMesh_shgo6")
+script = ExtResource("1_5sj44")

@@ -1,32 +1,45 @@
-[gd_scene format=3 uid="uid://m1s5cfr50wa3"]
+[gd_scene format=4 uid="uid://m1s5cfr50wa3"]
 
 [ext_resource type="Script" uid="uid://cys2lokf84gef" path="res://Scripts/camera_3d.gd" id="1_7pwqm"]
 [ext_resource type="Script" uid="uid://t6xyq5qsbwl3" path="res://battle_scene.gd" id="1_xj46k"]
 [ext_resource type="Script" uid="uid://ps1kkjlt7l4g" path="res://3d/combat/character_data.gd" id="2_donlu"]
+[ext_resource type="PackedScene" uid="uid://dxjlm1qvuseoo" path="res://3d/Arena_Generator.tscn" id="3_xj46k"]
 [ext_resource type="Texture2D" uid="uid://dptjvyqy68gar" path="res://Assets/Dungeon/torch_1.png" id="6_7pwqm"]
 [ext_resource type="Texture2D" uid="uid://bx48b61nm4tqm" path="res://Assets/Dungeon/mainlevbuild.png" id="7_bqhns"]
 [ext_resource type="Script" uid="uid://crqugsq2xntii" path="res://map.gd" id="7_donlu"]
 [ext_resource type="Script" uid="uid://c35wsc6n7s8vr" path="res://Scripts/StateMachine/StateMachine.gd" id="8_donlu"]
 [ext_resource type="Script" uid="uid://gylvj5o5hok5" path="res://3d/combat/states/enter_phase.gd" id="8_xj46k"]
 
-[sub_resource type="Resource" id="Resource_xj46k"]
+[sub_resource type="Resource" id="Resource_qysdf"]
 script = ExtResource("2_donlu")
-pos = Vector2i(2, 3)
-movement_range = 3
+movement_range = 2
+attack_range = 2
+metadata/_custom_type_script = "uid://ps1kkjlt7l4g"
+
+[sub_resource type="Resource" id="Resource_1u76d"]
+script = ExtResource("2_donlu")
+name = "Bob"
+pos = Vector2i(1, 1)
+movement_range = 1
 attack_range = 1
 metadata/_custom_type_script = "uid://ps1kkjlt7l4g"
 
-[sub_resource type="Resource" id="Resource_donlu"]
-script = ExtResource("2_donlu")
-name = "Bob"
-pos = Vector2i(4, 3)
-movement_range = 2
-attack_range = 1
-metadata/_custom_type_script = "uid://ps1kkjlt7l4g"
+[sub_resource type="ArrayMesh" id="ArrayMesh_xj46k"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}]
 
 [node name="Node3D" type="Node3D" unique_id=1152629599]
 script = ExtResource("1_xj46k")
-players = Array[ExtResource("2_donlu")]([SubResource("Resource_xj46k"), SubResource("Resource_donlu")])
+players = Array[ExtResource("2_donlu")]([SubResource("Resource_qysdf"), SubResource("Resource_1u76d")])
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1357733278]
 transform = Transform3D(1, 0, 0, 0, 0.9351043, 0.35437268, 0, -0.35437268, 0.9351043, 0.23722601, 0.8712242, 2.091158)
@@ -35,12 +48,12 @@ size = 1.69
 script = ExtResource("1_7pwqm")
 
 [node name="Bad guy" type="Sprite3D" parent="." unique_id=1089043324]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2657842, 0.1, -0.5813865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19625849, 0.17557988, -0.29495233)
 texture_filter = 0
 texture = ExtResource("6_7pwqm")
 
 [node name="Wall 1" type="Node3D" parent="." unique_id=1543295613]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18428558, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.05)
 
 [node name="Sprite3D" type="Sprite3D" parent="Wall 1" unique_id=1271164196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9118075, 0.36135268, -1.0332323)
@@ -74,3 +87,9 @@ metadata/_custom_type_script = "uid://c35wsc6n7s8vr"
 [node name="enterPhase" type="Node" parent="StateMachine" unique_id=1049183461]
 script = ExtResource("8_xj46k")
 metadata/_custom_type_script = "uid://gylvj5o5hok5"
+
+[node name="ArenaGenerator" parent="." unique_id=562925849 instance=ExtResource("3_xj46k")]
+mesh = SubResource("ArrayMesh_xj46k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1231342508]
+transform = Transform3D(0.25881907, -0.25, 0.93301266, 0, 0.9659258, 0.25881904, -0.9659258, -0.066987306, 0.25000003, 2.419885, 0.5585737, 0.607893)

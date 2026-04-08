@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cecwkn0diag3f"]
 
-[ext_resource type="Texture2D" uid="uid://dephvci2lmt3v" path="res://Assets/tile.png" id="1_jojhq"]
+[ext_resource type="Texture2D" uid="uid://d0u7swmyeocjr" path="res://Assets/tile.png" id="1_jojhq"]
 [ext_resource type="Script" uid="uid://knciusyofmkl" path="res://tile.gd" id="2_gnjaq"]
 [ext_resource type="Texture2D" uid="uid://rfxynmcjrp3x" path="res://Assets/available_tile.png" id="3_y7grv"]
 [ext_resource type="Texture2D" uid="uid://bc03hjpr2jfvy" path="res://Assets/danger_tile.png" id="4_2oy30"]
